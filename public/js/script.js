@@ -1,4 +1,8 @@
 const form = document.querySelector('#chat_form')
+const example_item1 = document.getElementsByClassName('item')[0]
+const example_item2 = document.getElementsByClassName('item')[1]
+const example_item3 = document.getElementsByClassName('item')[2]
+const preload = document.getElementsByClassName('preload')[0]
 const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
@@ -60,8 +64,10 @@ function chatStripe(isAi, value, uniqueId) {
 }
 
 const handleSubmit = async (e) => {
+
     e.preventDefault()
 
+    preload.style.display = "none";
     const data = new FormData(form)
 
     // user's chatstripe
@@ -110,9 +116,18 @@ const handleSubmit = async (e) => {
     }
 }
 
+const handleClick = async (e) => {
+    e.preventDefault()
+    console.log(e.target.innerText);
+    form.querySelector('textarea[name="prompt"]').value = e.target.innerText;
+}
+
 form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
         handleSubmit(e)
     }
 })
+example_item1.addEventListener('click', handleClick)
+example_item2.addEventListener('click', handleClick)
+example_item3.addEventListener('click', handleClick)

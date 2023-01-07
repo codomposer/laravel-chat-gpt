@@ -8,13 +8,13 @@
 }
 
 body {
-    background: #343541;
+    background: #ffffff;
 }
 
 #app {
     width: 100vw;
     height: 100vh;
-    background: #38515c;
+    background: #ffffff;
 
     display: flex;
     flex-direction: column;
@@ -50,7 +50,11 @@ body {
 }
 
 .ai {
-    background: #424242;
+    background: #009ef7;
+}
+
+.ai .message {
+    color: white;
 }
 
 .chat {
@@ -89,7 +93,7 @@ body {
 .message {
     flex: 1;
 
-    color: #dcdcdc;
+    color: #000000;
     font-size: 20px;
 
     max-width: 100%;
@@ -114,21 +118,25 @@ body {
 
 form {
     width: 100%;
+    position: absolute;
+    bottom: 20px;
     max-width: 1280px;
     margin: 0 auto;
     padding: 10px;
-    background: #424242;
+    box-shadow: 2px 2px 2px 3px #009cf7b2;
+    background: #ffffff;
 
     display: flex;
     flex-direction: row;
     gap: 10px;
+    border-radius: 30px;
 }
 
 textarea {
     width: 100%;
     overflow-y: hidden;
 
-    color: #49d391;
+    color: #368bda;
     font-size: 18px;
 
     padding: 10px;
@@ -148,4 +156,52 @@ button {
 form img {
     width: 30px;
     height: 30px;
+}
+
+.preload {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.preload .title {
+    text-align: center;
+    font-size: 50px;
+}
+
+.preload .explain {
+    margin-top: 30px;
+    padding: 1.5rem;
+    background-color: rgba(247, 247, 248, 0.7);
+    box-shadow: 1px 1px 2px 2px #009cf756;
+    border-radius: 0.375rem;
+    font-size: 20px;
+}
+
+.examples {
+    margin-top: 30px;
+}
+
+.examples .title {
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 30px;
+}
+
+.examples .item {
+    background-color: #f5f8fa;
+    border-color: #f5f8fa;
+    color: #5e6278;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.examples .item:hover {
+    background-color: #eef3f7;
 }
