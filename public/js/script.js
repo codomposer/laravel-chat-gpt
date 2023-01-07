@@ -23,7 +23,6 @@ function loader(element) {
 
 function typeText(element, text) {
     let index = 0
-
     let interval = setInterval(() => {
         if (index < text.length) {
             element.innerHTML += text.charAt(index)
@@ -118,7 +117,6 @@ const handleSubmit = async (e) => {
 
 const handleClick = async (e) => {
     e.preventDefault()
-    console.log(e.target.innerText);
     form.querySelector('textarea[name="prompt"]').value = e.target.innerText;
 }
 

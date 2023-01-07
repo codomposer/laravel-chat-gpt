@@ -11,16 +11,17 @@
     <body>
         <div id="app">
             <div id="chat_container">
-                <div class="preload">
-                    <div class="content">
-                        <h1 class="title">Web Chat GPT</h1>
-                        <div class="explain">With WebChatGPT you can augment your prompts with relevant web search results for better and up-to-date answers.</div>
-                        <div class="examples">
-                            <h4 class="title">Examples</h4>
-                            <div class="item">Explain quantum computing in simple terms</div>
-                            <div class="item">Got any creative ideas for a 10 year old’s birthday?</div>
-                            <div class="item">How do I make an HTTP request in Javascript?</div>
-                        </div>
+            </div>
+
+            <div class="preload">
+                <div class="content">
+                    <h1 class="title">Web Chat GPT</h1>
+                    <div class="explain">With WebChatGPT you can augment your prompts with relevant web search results for better and up-to-date answers.</div>
+                    <div class="examples">
+                        <h4 class="title">Examples</h4>
+                        <div class="item">Explain quantum computing in simple terms<img src="{{ asset('assets/send.svg') }}" alt="send" /></div>
+                        <div class="item">Got any creative ideas for a 10 year old’s birthday?<img src="{{ asset('assets/send.svg') }}" alt="send" /></div>
+                        <div class="item">How do I make an HTTP request in Javascript?<img src="{{ asset('assets/send.svg') }}" alt="send" /></div>
                     </div>
                 </div>
             </div>
