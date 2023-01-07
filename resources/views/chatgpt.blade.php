@@ -5,7 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="token" content="{{ csrf_token() }}">
-
+        <title>GPT - IMPERIUM GROUP</title>
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     </head>
     <body>
@@ -15,8 +15,8 @@
 
             <div class="preload">
                 <div class="content">
-                    <h1 class="title">Web Chat GPT</h1>
-                    <div class="explain">With WebChatGPT you can augment your prompts with relevant web search results for better and up-to-date answers.</div>
+                    <h1 class="title">GPT - Imperium Group</h1>
+                    <div class="explain">Create Content That is Enriched By AI, With The Touch of A Human</div>
                     <div class="examples">
                         <h4 class="title">Examples</h4>
                         <div class="item">Explain quantum computing in simple terms<img src="{{ asset('assets/send.svg') }}" alt="send" /></div>
