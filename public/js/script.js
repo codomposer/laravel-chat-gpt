@@ -4,6 +4,7 @@ const example_item2 = document.getElementsByClassName('item')[1]
 const example_item3 = document.getElementsByClassName('item')[2]
 const preload = document.getElementsByClassName('preload')[0]
 const chatContainer = document.querySelector('#chat_container')
+const textarea = document.querySelector('textarea')
 
 let loadInterval
 
@@ -121,11 +122,43 @@ const handleClick = async (e) => {
 }
 
 form.addEventListener('submit', handleSubmit)
-form.addEventListener('keyup', (e) => {
-    if (e.keyCode === 13) {
-        handleSubmit(e)
+// form.addEventListener('keyup', (e) => {
+//     if (e.keyCode === 13) {
+//         handleSubmit(e)
+//     }
+// })
+
+function getCaret(el) {
+    if (el.selectionStart) {
+        return el.selectionStart;
+    } else if (document.selection) {
+        el.focus();
+        var r = document.selection.createRange();
+        if (r == null) {
+            return 0;
+        }
+        var re = el.createTextRange(), rc = re.duplicate();
+        re.moveToBookmark(r.getBookmark());
+        rc.setEndPoint('EndToStart', re);
+        return rc.text.length;
     }
-})
+    return 0;
+}
+
+$('textarea').keyup(function (event) {
+    if (event.keyCode == 13) {
+        var content = this.value;
+        var caret = getCaret(this);
+        if (event.shiftKey) {
+            this.value = content.substring(0, caret - 1) + "\n" + content.substring(caret, content.length);
+            event.stopPropagation();
+        } else {
+            this.value = content.substring(0, caret - 1) + content.substring(caret, content.length);
+            handleSubmit(event)
+        }
+    }
+});
+
 example_item1.addEventListener('click', handleClick)
 example_item2.addEventListener('click', handleClick)
 example_item3.addEventListener('click', handleClick)
