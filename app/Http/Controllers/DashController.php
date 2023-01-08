@@ -17,7 +17,7 @@ class DashController extends Controller
 
     public function getIndex()
     {
-        return view('chatgpt',  ['name' => 'James']);
+        return view('chatgpt');
     }
 
     public function getChatGpt(Request $request)

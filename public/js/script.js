@@ -2,6 +2,8 @@ const form = document.querySelector('#chat_form')
 const example_item1 = document.getElementsByClassName('item')[0]
 const example_item2 = document.getElementsByClassName('item')[1]
 const example_item3 = document.getElementsByClassName('item')[2]
+const example_item4 = document.getElementsByClassName('item')[3]
+const example_item5 = document.getElementsByClassName('item')[4]
 const preload = document.getElementsByClassName('preload')[0]
 const chatContainer = document.querySelector('#chat_container')
 const textarea = document.querySelector('textarea')
@@ -48,7 +50,7 @@ function generateUniqueId() {
 function chatStripe(isAi, value, uniqueId) {
     return (
         `
-        <div class="wrapper ${isAi && 'ai'}">
+        <div class="chat-wrapper ${isAi && 'ai'}">
             <div class="chat">
                 <div class="profile">
                     <img
@@ -162,3 +164,5 @@ $('textarea').keyup(function (event) {
 example_item1.addEventListener('click', handleClick)
 example_item2.addEventListener('click', handleClick)
 example_item3.addEventListener('click', handleClick)
+example_item4.addEventListener('click', handleClick)
+example_item5.addEventListener('click', handleClick)
